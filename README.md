@@ -137,7 +137,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
     -   **Milestone 4 (12.5%)**: $8,625 USD
     -   **Milestone 5 (30%)**: $20,700 USD
 -   **Additional Costs**:
-    -   Hosting setup proposal: $7,000 USD/year
+    -   Hosting setup proposal: $7,000 USD/year (if finally costs are cheaper, we will return the remaining funds to the DAO)
     -   Audits are not included.
 ----------
 ## 7. Team
