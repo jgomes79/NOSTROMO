@@ -59,9 +59,9 @@ Users can participate in token sales by:
 
 A designated section allows users to claim purchased tokens and staking rewards. The claimable amount will depend on user tier level, rewarding users with higher allocations and reduced claim fees in proportion to their participation.
 
-### 3.7 Custom Smart Contracts Fees
+### 3.7 Shareholders Smart Contracts Fees
 
-QUBIC community DAO may vote on fee percentages for custom SmartContracts. This flexibility allows community involvement in shaping platform costs.
+In all SmartContracts developed there will be a fee set up by a community DAO vote
 
 ----------
 
