@@ -99,7 +99,18 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 5. Milestones and Timeline
+## 5. Tech Stack
+
+-  **Frontend**:
+   - Vite
+   - Metamask snaps
+-  **Backend**:
+   - NodeJs + Typescript
+-  **Database**:
+   - MySQL
+
+
+## 6. Milestones and Timeline
 
 -   **Project Start**: November 11
 -   **Milestone 1 (Nov 29)**:
@@ -123,7 +134,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 6. Budget and Payment Structure
+## 7. Budget and Payment Structure
 
 -   **Total Project Cost**: $69,000 USD
     -   **Technical Development**: $58,000 USD
@@ -140,7 +151,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
     -   Hosting setup proposal: $7,000 USD/year (if finally costs are cheaper, we will return the remaining funds to the DAO)
     -   Audits are not included.
 ----------
-## 7. Team
+## 8. Team
 
 **Jorge**: Backend & SmartContract Integration
 
@@ -156,13 +167,13 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 **Team Experience Highlights:**
 
-- Rungie: Developed SmartContracts for FrameIt.
+- Rungie: Developed SmartContracts for FrameIt (Overgie)
 
 - Team Queso: STO mechanism design, NFTs.
 
 - LitlabGames (Co-founder): Token economy, launch strategies.
 
-- ElixirGames (C-Level): Tokenomics for $ELIX.
+- ElixirGames (C-Level): Tokenomics for $ELIX and RoboKiden (first game) SmartContracts development.
 
 - Zignaly: Token creation, staking, EVM-Solana bridge.
 
@@ -170,9 +181,16 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 - Realfund: STO real estate platform.
 
-- GivitNFT: NFT-based community creation platform.
+- GivitNFT: NFT-based community creation platform. (https://givitnft.com)
 
+- BRND.land: Farcaster web app to increase engagement with Brands (https://brnd.land)
 
-## 8. Conclusion
+## 9. Links to public projects developed by the team
+- https://www.overgie.com
+- https://givitnft.com
+- https://brnd.land
+- https://robokiden.com/
+
+## 10. Conclusion
 
 This proposal for the NOSTROMO launchpad integrates innovative capital distribution, tiered participation, and custom SmartContract requirements to deliver a unique, sci-fi-themed platform that empowers projects and investors. Our team’s expertise spans technical development and token economics, positioning NOSTROMO as the key launchpad within the QUBIC ecosystem.
