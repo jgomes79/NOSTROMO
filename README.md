@@ -22,12 +22,35 @@ The landing page will serve as the hub of NOSTROMO, featuring:
 -   **Launchpad Overview**: Explanation of how the launchpad operates, benefits for project owners, and opportunities for investors.
 -   **Footer**: Links to social media, contact info, terms of use, and privacy policy.
 
-### 3.2 Project Creation
+### 3.2 Project Life Cycle
 
-Enabling users to create and manage their token sales:
+Enabling users to create their projects and manage their token sales:
 
--   **Draft Mode**: Projects are first created in a “Draft” state.
--   **Approval Process**: Projects remain private until reviewed and approved by DAO members after discussion with project owners.
+The projects will have the following states:
+-	**Draft Mode**: Projects are first created in a “Draft” state.
+-	**Approval Process**: Projects remain private until reviewed and approved by DAO members after discussion with project owners.
+-	**Approved or rejected**: Depending on the result of the user votes.
+-	**Funded**: If the project raise all money asked.
+-	**Failed**: If the project doesn't raise the minimum amount of money asked.
+During the development we will ask the community if everybody will be able to create a new project or if users must have a minimum amount of QUBIC tokens to create a project.
+
+To create a new project the user will have to fill a record with the following fields:
+-	Project name
+-	Description
+-	Banner & logo
+-	Social networks
+-	Amount to raise and token to invest (at the beginning will be only QUBIC and when bridges start to be available, we could add USDT or similar)
+-	Start and end dates
+-	Project tokenomics and token information
+-	Cliff and vesting options
+-	Minimum amount of investment received to continue ahead with the project.
+After the project is created by the owner, project status will become “Approval Process” and the DAO will vote if the project is approved or rejected.
+If the project is rejected, it will disappear from the launchd and owner will be notified.
+If the project is approved, the project will be available in the section of “Upcoming pools” and people could invest when reach the start date.
+If the project reaches the max investment before the end date, the investment process will close and the tokens will be allocated in the SmartContracts to be ready to claim according with the cliff & vesting configuration.
+If the project doesn't reach the maximum amount before the end date, if the minimum amount is reached, the tokens will be allocated in the SmartContracts in the same way described in the previous point.
+If the project doesn't reach the minimum amount before the end date, the project will be closed and the investment will be returned to the investors.
+
 
 ### 3.3 Capital Distribution for New Projects
 
@@ -45,19 +68,16 @@ A tiered system incentivizes users to stake $QUBIC for enhanced benefits:
     -   **Lower Tiers**: 3% fee (1.5% to Launchpad Creators, 1.5% to the QUBIC Ecosystem Fund).
     -   **Highest Tier**: 1% fee (0.5% to each).
 
-### 3.5 Sales Section
-
-Users can participate in token sales by:
-
--   Connecting their wallets with Web3 integrations.
--   Viewing project details in a streamlined format.
--   Purchasing tokens using QUBIC or other supported tokens (USDT/USDC in the future).
-
 ![Logo](https://github.com/jgomes79/NOSTROMO/blob/main/Architecture.png)
 
-### 3.6 Claim Section
+### 3.5 Claim Section
 
 A designated section allows users to claim purchased tokens and staking rewards. The claimable amount will depend on user tier level, rewarding users with higher allocations and reduced claim fees in proportion to their participation.
+
+### 3.6 User Section
+
+A user must use Metamask snaps to login in the launchpad. Once is logged could access to any functionality that requires a transaction (create a project, invest, claim).
+In the user section, users could have a centralized dashboard to see their investments and to manage (claim, stake, …) all the actions in an easy way.
 
 ### 3.7 Shareholders Smart Contracts Fees
 
@@ -99,7 +119,15 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 5. Tech Stack
+## 5. Future improvements
+
+- Integration with a mobile wallet: As soon mobile wallets for QUBIC could be used from a webapp, we could integrate them to allow them to invest and claim from a mobile phone or tablet.
+- Integrate the possibility of creating the project token directly from the launchpad.
+- Integrate the possibility to list the project token in a DEX directly from the launchpad.
+
+----------
+
+## 6. Tech Stack
 
 -  **Frontend**:
    - Vite
@@ -108,9 +136,15 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
    - NodeJs + Typescript
 -  **Database**:
    - MySQL
+-  **Access to QUBIC blockchain**:
+   - Metamask snaps
+   - RPC node
+-  **Cloud**:
+   - AWS or Azure
 
+----------
 
-## 6. Milestones and Timeline
+## 7. Milestones and Timeline
 
 -   **Project Start**: November 11
 -   **Milestone 1 (Nov 29)**:
@@ -134,7 +168,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 7. Budget and Payment Structure
+## 8. Budget and Payment Structure
 
 -   **Total Project Cost**: $69,000 USD
     -   **Technical Development**: $58,000 USD
@@ -149,9 +183,23 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
     -   **Milestone 5 (30%)**: $20,700 USD
 -   **Additional Costs**:
     -   Hosting setup proposal: $7,000 USD/year (if finally costs are cheaper, we will return the remaining funds to the DAO)
+    -   Community management $15,000 USD/year
+	    -  Set-up Discord server and roles
+	    -  Set-up Telegram group
+	    -  Community Manager full-time
+	    -  Telegram Mods full-time
+    -  AMAs and KOL Manager $20,000 USD/year
+	    -  Management of AMAs and partnerships
+	    -  Managing KOL content about the project
+	    -  In-house content management
+    -  Ads Management around $15,000 USD/year depending on the Budget
+	    -  Coinzilla Ads Management
+	    -  Persona3 Ads Management
+	    -  Google Ads Management
+	    -  Meta Ads Management
     -   Audits are not included.
 ----------
-## 8. Team
+## 9. Team
 
 **Jorge**: Backend & SmartContract Integration
 
@@ -185,12 +233,16 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 - BRND.land: Farcaster web app to increase engagement with Brands (https://brnd.land)
 
-## 9. Links to public projects developed by the team
+----------
+
+## 10. Links to public projects developed by the team
 - https://www.overgie.com
 - https://givitnft.com
 - https://brnd.land
 - https://robokiden.com/
 
-## 10. Conclusion
+----------
+
+## 11. Conclusion
 
 This proposal for the NOSTROMO launchpad integrates innovative capital distribution, tiered participation, and custom SmartContract requirements to deliver a unique, sci-fi-themed platform that empowers projects and investors. Our team’s expertise spans technical development and token economics, positioning NOSTROMO as the key launchpad within the QUBIC ecosystem.
