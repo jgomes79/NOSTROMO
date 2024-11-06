@@ -44,6 +44,7 @@ To create a new project the user will have to fill a record with the following f
 -	Project tokenomics and token information
 -	Cliff and vesting options
 -	Minimum amount of investment received to continue ahead with the project.
+
 After the project is created by the owner, project status will become “Approval Process” and the DAO will vote if the project is approved or rejected.
 If the project is rejected, it will disappear from the launchd and owner will be notified.
 If the project is approved, the project will be available in the section of “Upcoming pools” and people could invest when reach the start date.
@@ -128,6 +129,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 ----------
 
 ## 6. Tech Stack
+![Logo](https://github.com/jgomes79/NOSTROMO/blob/main/TechArchitecture.png)
 
 -  **Frontend**:
    - Vite
@@ -167,17 +169,15 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
         -   Ankhlabs
 
 -   **Building sense of belonging**:
-We want to build a gamified ecosystem based on our users. We are specialists in creating gamified campaigns for communities.
-
-Using this as a base point, the goal is to create a social system of entertainment, interaction and rewards that will attract new users to the QUBIC gang.
-
-How we will start - Building a Gamified Community Channels:
--   Set-up Discord server and roles
--   Set-up Telegram group
--   Community Manager full-time: Establish a system for community support and moderation, ensuring a positive and supportive environment.
--   Creating a SocialFi, games and community participation system based on the study of our users.
--   Identify and empower the most active and passionate members of the community.
--   Rewards program
+    -   We want to build a gamified ecosystem based on our users. We are specialists in creating gamified campaigns for communities.
+    -   Using this as a base point, the goal is to create a social system of entertainment, interaction and rewards that will attract new users to the QUBIC gang.
+    -   How we will start - Building a Gamified Community Channels:
+        -   Set-up Discord server and roles
+        -   Set-up Telegram group
+        -   Community Manager full-time: Establish a system for community support and moderation, ensuring a positive and supportive environment.
+        -   Creating a SocialFi, games and community participation system based on the study of our users.
+        -   Identify and empower the most active and passionate members of the community.
+        -   Rewards program
 
 -   **User acquisition strategy**:
     -   Coinzilla Ads Management
@@ -226,7 +226,7 @@ How we will start - Building a Gamified Community Channels:
     -   **Milestone 5 (30%)**: $20,700 USD
 -   **Additional Costs**:
     -   Hosting setup proposal: $7,000 USD/year (if finally costs are cheaper, we will return the remaining funds to the DAO)
-    -   Marketing: Costs are estimated and will be supported using the fees generated in the LaunchPad
+    -   Marketing: Costs are estimated **and will be supported using the fees generated in the LaunchPad**
         -   Community management: $15,000 USD/year
         -   AMAs and KOL Manager. $20,000 USD/year
         -   Ads Management: $15,000 USD/year
