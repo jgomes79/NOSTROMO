@@ -144,7 +144,50 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 7. Milestones and Timeline
+## 7. Marketing and Communication strategy
+-   **Building a Content Flow**:
+    -   Editorial Calendar: Include content types (educational, promotional, community), posting frequency, and special events.
+    -   Specific Launch Campaigns: Strategic campaign ideas for new launches to promote community projects.
+    -   Custom Content: Create specific content for each platform to maximise engagement.
+        -   Twitter
+        -   Discord
+        -   Medium
+        -   Telegram
+
+-   **Building Word of Mouth**:
+    -   Brand Ambassador Program: Identify KOLs whose content resonates with the brand's industry and values
+    -   Management of AMAs and partnerships
+    -   Managing KOL content about the project
+    -   In-house content management
+
+-   **Building a speaker network**:
+    -   Management of Discord AMAs
+    -   Management of regular Twitter Spaces: Plan regular events, such as developer spaces and Q&A sessions, to increase interaction and engagement. Some of our collaborators:
+        -   UnfungibleXYZ
+        -   Ankhlabs
+
+-   **Building sense of belonging**:
+We want to build a gamified ecosystem based on our users. We are specialists in creating gamified campaigns for communities.
+
+Using this as a base point, the goal is to create a social system of entertainment, interaction and rewards that will attract new users to the QUBIC gang.
+
+How we will start - Building a Gamified Community Channels:
+-   Set-up Discord server and roles
+-   Set-up Telegram group
+-   Community Manager full-time: Establish a system for community support and moderation, ensuring a positive and supportive environment.
+-   Creating a SocialFi, games and community participation system based on the study of our users.
+-   Identify and empower the most active and passionate members of the community.
+-   Rewards program
+
+-   **User acquisition strategy**:
+    -   Coinzilla Ads Management
+    -   Persona3 Ads Management
+    -   Google Ads Management
+    -   Meta Ads Management
+
+----------
+
+## 8. Milestones and Timeline
 
 -   **Project Start**: November 11
 -   **Milestone 1 (Nov 29)**:
@@ -168,7 +211,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 8. Budget and Payment Structure
+## 9. Budget and Payment Structure
 
 -   **Total Project Cost**: $69,000 USD
     -   **Technical Development**: $58,000 USD
@@ -183,23 +226,15 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
     -   **Milestone 5 (30%)**: $20,700 USD
 -   **Additional Costs**:
     -   Hosting setup proposal: $7,000 USD/year (if finally costs are cheaper, we will return the remaining funds to the DAO)
-    -   Community management $15,000 USD/year
-	    -  Set-up Discord server and roles
-	    -  Set-up Telegram group
-	    -  Community Manager full-time
-	    -  Telegram Mods full-time
-    -  AMAs and KOL Manager $20,000 USD/year
-	    -  Management of AMAs and partnerships
-	    -  Managing KOL content about the project
-	    -  In-house content management
-    -  Ads Management around $15,000 USD/year depending on the Budget
-	    -  Coinzilla Ads Management
-	    -  Persona3 Ads Management
-	    -  Google Ads Management
-	    -  Meta Ads Management
+    -   Marketing: Costs are estimated and will be supported using the fees generated in the LaunchPad
+        -   Community management: $15,000 USD/year
+        -   AMAs and KOL Manager. $20,000 USD/year
+        -   Ads Management: $15,000 USD/year
     -   Audits are not included.
+
 ----------
-## 9. Team
+
+## 10. Team
 
 **Jorge**: Backend & SmartContract Integration
 
@@ -235,7 +270,7 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 10. Links to public projects developed by the team
+## 11. Links to public projects developed by the team
 - https://www.overgie.com
 - https://givitnft.com
 - https://brnd.land
@@ -243,6 +278,6 @@ In all SmartContracts developed there will be a fee set up by a community DAO vo
 
 ----------
 
-## 11. Conclusion
+## 12. Conclusion
 
 This proposal for the NOSTROMO launchpad integrates innovative capital distribution, tiered participation, and custom SmartContract requirements to deliver a unique, sci-fi-themed platform that empowers projects and investors. Our team’s expertise spans technical development and token economics, positioning NOSTROMO as the key launchpad within the QUBIC ecosystem.
