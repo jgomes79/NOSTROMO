@@ -1,0 +1,9 @@
+{
+  "name": "launchpad",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/launchpad/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project launchpad --web",
+  "targets": {}
+}
