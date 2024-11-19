@@ -1,0 +1,23 @@
+.layout {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  backdrop-filter: blur(4px);
+  background: $backdrop;
+  padding: 32px;
+  overflow: auto;
+
+  &.dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}

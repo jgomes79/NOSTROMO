@@ -1,0 +1,45 @@
+.layout {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 62px);
+  align-items: center;
+}
+
+.field {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.title, .symbol, .description {
+  text-align: center;
+}
+
+.symbol {
+  font-size: 82px;
+  font-weight: 900;
+}
+
+.title {
+  font-size: 80px !important;
+  line-height: 92px !important;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  padding: 22px 0;
+
+}
+
+.actions {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 0 auto;
+}

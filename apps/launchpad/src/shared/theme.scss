@@ -1,0 +1,61 @@
+$breakpoints: (
+  mobile: (max: 767px),
+  mobile-vertical: (max: 599px),
+  mobile-horizontal: (min: 600px, max: 767px),
+  tablet: (min: 768px, max: 1439px),
+  tablet-vertical: (min: 768px, max: 1023px),
+  tablet-horizontal: (min: 1024px, max: 1439px),
+  desktop: (min: 1440px)
+);
+
+@mixin respond-to($breakpoint) {
+  $query: map-get($breakpoints, $breakpoint);
+
+  @if $query {
+    $min: map-get($query, min);
+    $max: map-get($query, max);
+
+    @if $min and $max {
+      @media (min-width: $min) and (max-width: $max) {
+        @content;
+      }
+    }
+    @else if $min {
+      @media (min-width: $min) {
+        @content;
+      }
+    }
+    @else if $max {
+      @media (max-width: $max) {
+        @content;
+      }
+    }
+    @else {
+      @warn "No 'min' or 'max' defined for breakpoint `#{$breakpoint}`.";
+    }
+  }
+  @else {
+    @warn "Breakpoint `#{$breakpoint}` is not defined in the breakpoints map.";
+  }
+}
+
+
+@mixin theme($scheme) {
+  @if $scheme == dark or $scheme == light {
+    @media (prefers-color-scheme: #{$scheme}) {
+      @content;
+    }
+  } @else {
+    @warn "Color scheme `#{$scheme}` is not valid. Use 'light' or 'dark'.";
+  }
+}
+
+
+@mixin fontFamily() {
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,27 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  height: 18px;
+
+  $skeletonTrail: rgba(255, 255, 255, 0.03);
+
+  background: linear-gradient(to right, $skeletonTrail 0%, rgba(255, 255, 255, 0) 50%, $skeletonTrail 100%);
+  background-size: 300% 100%; 
+  border-radius: 18px;
+  animation: trailEffect 4s infinite linear;
+}
+
+@keyframes trailEffect {
+  0% {
+    background-position: -100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
