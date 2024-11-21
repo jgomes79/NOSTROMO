@@ -1,11 +1,7 @@
-import {
-  Table,
-  Column,
-  Model,
-  PrimaryKey,
-  DataType,
-} from 'sequelize-typescript';
-import { ProjectStates } from '@/project/project.types';
+import { Table, Column, Model, BelongsTo, ForeignKey, PrimaryKey, DataType } from "sequelize-typescript";
+
+import { ProjectStates } from "@/project/project.types";
+import { User } from "@/user/user.entity";
 
 @Table
 export class Project extends Model {
@@ -99,4 +95,14 @@ export class Project extends Model {
     type: DataType.STRING,
   })
   mediumUrl: string;
+
+  // Relationships
+  @ForeignKey(() => User)
+  @Column({
+    type: DataType.INTEGER,
+  })
+  ownerId: number;
+
+  @BelongsTo(() => User)
+  owner: User;
 }

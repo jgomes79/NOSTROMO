@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { getAllRoutes } from '@/core/modules/modules.helpers';
+import { getAllRoutes } from "@/core/modules/modules.helpers";
 
 /**
  * AppRoutes component.
@@ -10,7 +10,7 @@ import { getAllRoutes } from '@/core/modules/modules.helpers';
  * @returns {JSX.Element} The RouterProvider component.
  */
 export function AppRoutes(): JSX.Element {
-  const router = createBrowserRouter(getAllRoutes(), { basename: '/' });
+  const router = createBrowserRouter(getAllRoutes(), { basename: "/" });
 
   return <RouterProvider router={router} />;
 }

@@ -1,8 +1,8 @@
-import '../global.scss';
+import "../global.scss";
 
-import '../modules/modules';
+import "../modules/modules";
 
-import { AppRoutes } from './AppRoutes';
+import { AppRoutes } from "./AppRoutes";
 
 /**
  * Main application component.

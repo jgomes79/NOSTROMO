@@ -1,10 +1,11 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Currency } from '@/currency/currency.entity';
+import { Inject, Injectable } from "@nestjs/common";
+
+import { Currency } from "@/currency/currency.entity";
 
 @Injectable()
 export class CurrencyService {
   constructor(
-    @Inject('CurrencyRepository')
+    @Inject("CurrencyRepository")
     private currencyRepository: typeof Currency,
   ) {}
 

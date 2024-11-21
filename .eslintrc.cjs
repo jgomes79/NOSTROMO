@@ -32,7 +32,7 @@ module.exports = {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:@tanstack/eslint-plugin-query/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended"
       ],
       env: {
         ...imports.env,

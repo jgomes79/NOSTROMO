@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
-import { CurrencyController } from './currency.controller';
-import { CurrencyService } from './currency.service';
-import { currencyProviders } from '@/currency/currency.providers';
-import { DatabaseModule } from '@/database/database.module';
+import { currencyProviders } from "@/currency/currency.providers";
+import { DatabaseModule } from "@/database/database.module";
+
+import { CurrencyController } from "./currency.controller";
+import { CurrencyService } from "./currency.service";
 
 /**
  * Module that provides currency-related services and controllers.

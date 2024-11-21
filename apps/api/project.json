@@ -21,19 +21,6 @@
           "buildTarget": "api:build:production"
         }
       }
-    },
-    "build": {
-      "executor": "@nrwl/node:build",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/api",
-        "main": "apps/api/src/main.ts",
-        "tsConfig": "apps/api/tsconfig.app.json"
-      }
-    },
-    "docker-build": {
-      "dependsOn": ["build"],
-      "command": "docker build -f apps/api/Dockerfile . -t api"
     }
   }
 }

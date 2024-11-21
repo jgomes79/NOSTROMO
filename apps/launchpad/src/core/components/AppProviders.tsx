@@ -1,11 +1,11 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { I18nProvider } from '@/i18n/i18n.provider';
+import { I18nProvider } from "@/i18n/i18n.provider";
 
-import { queryClient as defaultQueryClient } from '../queryClient';
+import { queryClient as defaultQueryClient } from "../queryClient";
 
 interface AppProvidersProps {
   readonly queryClient?: QueryClient;
@@ -19,9 +19,7 @@ interface AppProvidersProps {
  *
  * @returns {JSX.Element} The providers wrapped around the app.
  */
-export function AppProviders({
-  queryClient = defaultQueryClient,
-}: AppProvidersProps): JSX.Element {
+export function AppProviders({ queryClient = defaultQueryClient }: AppProvidersProps): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
