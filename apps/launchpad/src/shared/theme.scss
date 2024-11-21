@@ -1,11 +1,32 @@
+$black: #000;
+$white: #fff;
+
 $breakpoints: (
-  mobile: (max: 767px),
-  mobile-vertical: (max: 599px),
-  mobile-horizontal: (min: 600px, max: 767px),
-  tablet: (min: 768px, max: 1439px),
-  tablet-vertical: (min: 768px, max: 1023px),
-  tablet-horizontal: (min: 1024px, max: 1439px),
-  desktop: (min: 1440px)
+  mobile: (
+    max: 767px,
+  ),
+  mobile-vertical: (
+    max: 599px,
+  ),
+  mobile-horizontal: (
+    min: 600px,
+    max: 767px,
+  ),
+  tablet: (
+    min: 768px,
+    max: 1439px,
+  ),
+  tablet-vertical: (
+    min: 768px,
+    max: 1023px,
+  ),
+  tablet-horizontal: (
+    min: 1024px,
+    max: 1439px,
+  ),
+  desktop: (
+    min: 1440px,
+  ),
 );
 
 @mixin respond-to($breakpoint) {
@@ -19,26 +40,21 @@ $breakpoints: (
       @media (min-width: $min) and (max-width: $max) {
         @content;
       }
-    }
-    @else if $min {
+    } @else if $min {
       @media (min-width: $min) {
         @content;
       }
-    }
-    @else if $max {
+    } @else if $max {
       @media (max-width: $max) {
         @content;
       }
-    }
-    @else {
+    } @else {
       @warn "No 'min' or 'max' defined for breakpoint `#{$breakpoint}`.";
     }
-  }
-  @else {
+  } @else {
     @warn "Breakpoint `#{$breakpoint}` is not defined in the breakpoints map.";
   }
 }
-
 
 @mixin theme($scheme) {
   @if $scheme == dark or $scheme == light {
@@ -50,8 +66,10 @@ $breakpoints: (
   }
 }
 
-
 @mixin fontFamily() {
+  font-family: "Aldrich", sans-serif !important;
+  font-weight: 400;
+
   font-optical-sizing: auto;
   font-style: normal;
 

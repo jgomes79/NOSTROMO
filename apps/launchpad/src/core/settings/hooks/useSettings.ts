@@ -1,9 +1,9 @@
-import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
-import { Locale } from '@/i18n/i18n.types';
+import { Locale } from "@/i18n/i18n.types";
 
-import { SettingsState } from '../settings.types';
+import { SettingsState } from "../settings.types";
 
 /**
  * Initial state for the settings.
@@ -29,8 +29,8 @@ export const useSettings = create<UseSettingsProps>()(
       setLanguage: (language) => set({ language }),
     }),
     {
-      name: '@agents-settings', // name of the item in the storage (must be unique)
+      name: "@nostromo-settings", // name of the item in the storage (must be unique)
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 );

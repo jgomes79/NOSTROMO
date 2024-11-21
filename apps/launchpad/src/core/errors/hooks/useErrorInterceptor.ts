@@ -1,7 +1,7 @@
-import axios, { InternalAxiosRequestConfig, AxiosError } from 'axios';
-import Cookies from 'js-cookie';
+import axios, { InternalAxiosRequestConfig, AxiosError } from "axios";
+import Cookies from "js-cookie";
 
-import { ErrorCodes } from '../errors.types';
+import { ErrorCodes } from "../errors.types";
 
 export const useErrorInterceptor = () => {
   /**
@@ -15,7 +15,7 @@ export const useErrorInterceptor = () => {
       },
       (error) => {
         return Promise.reject(error);
-      }
+      },
     );
 
     axios.interceptors.response.use(
@@ -23,7 +23,7 @@ export const useErrorInterceptor = () => {
       async (error: AxiosError) => {
         await catchHandleError(error.response?.status as ErrorCodes);
         return Promise.reject(error);
-      }
+      },
     );
   }
 
@@ -38,7 +38,7 @@ export const useErrorInterceptor = () => {
   const catchHandleError = async (code: ErrorCodes): Promise<void> => {
     const errorHandlers = {
       [ErrorCodes.NOT_AUTHORIZED]: async () => {
-        Cookies.remove('Authorization');
+        Cookies.remove("Authorization");
       },
     };
 

@@ -1,9 +1,13 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
+  background-color: $black;
+  color: #fff;
 }
 
 * {
+  @include fontFamily();
   box-sizing: border-box;
   overscroll-behavior: none;
 }
@@ -12,12 +16,22 @@ a {
   text-decoration: none;
 }
 
-
-ul, li, ol {
+ul,
+li,
+ol {
   list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6, fieldset, ul, li, ol {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+fieldset,
+ul,
+li,
+ol {
   padding: 0;
   margin: 0;
 }

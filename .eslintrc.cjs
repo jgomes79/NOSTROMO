@@ -29,19 +29,27 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       extends: [
         'plugin:@nx/typescript',
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:@tanstack/eslint-plugin-query/recommended"
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:@tanstack/eslint-plugin-query/recommended',
       ],
       env: {
         ...imports.env,
         ...typescript.env,
         ...react.env,
       },
-      plugins: [...imports.plugins, ...typescript.plugins, ...react.plugins, "react-refresh"],
+      plugins: [
+        ...imports.plugins,
+        ...typescript.plugins,
+        ...react.plugins,
+        'react-refresh',
+      ],
       rules: {
-        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+        'react-refresh/only-export-components': [
+          'warn',
+          { allowConstantExport: true },
+        ],
         ...imports.rules,
         ...typescript.rules,
         ...react.rules,

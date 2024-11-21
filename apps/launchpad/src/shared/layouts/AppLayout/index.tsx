@@ -1,9 +1,10 @@
-import React, { ReactNode, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { ReactNode, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
-import styles from './AppLayout.module.scss';
+import { useErrorInterceptor } from "@/core/errors/hooks/useErrorInterceptor";
+import { AppBar } from "@/shared/components/AppBar";
 
-import { useErrorInterceptor } from '@/core/errors/hooks/useErrorInterceptor';
+import styles from "./AppLayout.module.scss";
 
 export interface AppLayoutProps {
   readonly children?: ReactNode;
@@ -16,9 +17,7 @@ export interface AppLayoutProps {
  * @param {AppLayoutProps} props - The properties for the AppLayout component.
  * @returns {React.ReactElement} The rendered AppLayout component.
  */
-export const AppLayout: React.FC<AppLayoutProps> = ({
-  children,
-}: AppLayoutProps): React.ReactElement => {
+export const AppLayout: React.FC<AppLayoutProps> = ({ children }: AppLayoutProps): React.ReactElement => {
   const { configureErrorInterceptors } = useErrorInterceptor();
 
   /**
@@ -30,6 +29,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
 
   return (
     <div className={styles.container}>
+      <AppBar />
       <Outlet />
       {children}
     </div>

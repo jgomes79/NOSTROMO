@@ -1,2 +1,5 @@
-import '@/shared';
-import '@/i18n';
+import "@/home";
+import "@/wallet";
+
+import "@/shared";
+import "@/i18n";

@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { I18nProvider } from "@/i18n/i18n.provider";
+import { WalletProvider } from "@/wallet/wallet.provider";
 
 import { queryClient as defaultQueryClient } from "../queryClient";
 
@@ -22,9 +23,11 @@ interface AppProvidersProps {
 export function AppProviders({ queryClient = defaultQueryClient }: AppProvidersProps): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
-        <Outlet />
-      </I18nProvider>
+      <WalletProvider>
+        <I18nProvider>
+          <Outlet />
+        </I18nProvider>
+      </WalletProvider>
     </QueryClientProvider>
   );
 }

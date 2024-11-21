@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 
-import { QueryClient, QueryClientConfig } from '@tanstack/react-query';
+import { QueryClient, QueryClientConfig } from "@tanstack/react-query";
 
 /** Default query cache time in milliseconds (1 hour) */
 export const QUERY_CACHE_TIME = 1000 * 60 * 60; // 1 hour
@@ -42,6 +42,6 @@ export function useQueryClientCacheOptions() {
       gcTime: QUERY_CACHE_TIME,
       staleTime: Number.POSITIVE_INFINITY,
     }),
-    []
+    [],
   );
 }
