@@ -10,7 +10,7 @@ import { DatabaseModule } from '@/database/database.module';
  */
 @Module({
   imports: [DatabaseModule],
-  providers: [ProjectService, ...projectProviders],
   controllers: [ProjectController],
+  providers: [ProjectService, ...projectProviders],
 })
 export class ProjectModule {}
