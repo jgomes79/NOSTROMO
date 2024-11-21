@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "jsx": "react",
     "types": ["@testing-library/jest-dom"],
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["node_modules", "tmp"]
 }

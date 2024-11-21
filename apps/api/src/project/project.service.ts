@@ -1,10 +1,11 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Project } from '@/project/project.entity';
+import { Inject, Injectable } from "@nestjs/common";
+
+import { Project } from "@/project/project.entity";
 
 @Injectable()
 export class ProjectService {
   constructor(
-    @Inject('ProjectRepository')
+    @Inject("ProjectRepository")
     private projectRepository: typeof Project,
   ) {}
 

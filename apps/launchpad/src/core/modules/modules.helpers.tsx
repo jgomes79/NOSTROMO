@@ -1,14 +1,14 @@
-import React from 'react';
-import { RouteObject } from 'react-router-dom';
+import React from "react";
+import { RouteObject } from "react-router-dom";
 
-import { deepmerge } from 'deepmerge-ts';
+import { deepmerge } from "deepmerge-ts";
 
-import { LocaleResources } from '@/i18n/i18n.types';
-import { AppLayout } from '@/shared/layouts/AppLayout';
-import { ErrorPage } from '@/shared/pages/ErrorPage';
+import { LocaleResources } from "@/i18n/i18n.types";
+import { AppLayout } from "@/shared/layouts/AppLayout";
+import { ErrorPage } from "@/shared/pages/ErrorPage";
 
-import { Module } from '../app.types';
-import { AppProviders } from '../components/AppProviders';
+import { Module } from "../app.types";
+import { AppProviders } from "../components/AppProviders";
 
 export type GlobalThis = typeof globalThis & { APP_MODULES: Module[] };
 
@@ -53,20 +53,18 @@ export const getAllLocalesResources = (): LocaleResources => {
  * to handle unknown paths.
  */
 export const getAllRoutes = (): RouteObject[] => {
-  const routes = modules
-    .filter((module) => !!module.routes)
-    .flatMap((module) => module.routes) as RouteObject[];
+  const routes = modules.filter((module) => !!module.routes).flatMap((module) => module.routes) as RouteObject[];
 
   // Adding 404 error to the global routes.
   routes.push({
-    path: '*',
+    path: "*",
     element: (
-      <AppLayout terms={'all'}>
+      <AppLayout>
         <ErrorPage
-          code={'404'}
-          title={'Page not found'}
+          code={"404"}
+          title={"Page not found"}
           description={
-            'Sorry, the page you are looking for does not exist. It might have been removed or you may have mistyped the URL. Please check and try again.'
+            "Sorry, the page you are looking for does not exist. It might have been removed or you may have mistyped the URL. Please check and try again."
           }
         />
       </AppLayout>
@@ -75,7 +73,7 @@ export const getAllRoutes = (): RouteObject[] => {
 
   return [
     {
-      path: '',
+      path: "",
       element: <AppProviders />,
       children: routes,
     },

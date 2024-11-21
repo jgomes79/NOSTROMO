@@ -13,6 +13,12 @@ export class Project extends Model {
   id: number;
 
   @Column({
+    defaultValue: ProjectStates.DRAFT,
+    type: DataType.ENUM(...Object.values(ProjectStates)),
+  })
+  state: ProjectStates;
+
+  @Column({
     type: DataType.STRING,
   })
   name: string;
@@ -25,28 +31,28 @@ export class Project extends Model {
   @Column({
     type: DataType.STRING,
   })
-  avatar: string;
+  photoUrl: string;
 
   @Column({
     type: DataType.STRING,
   })
-  banner: string;
+  bannerUrl: string;
 
   // Documents
   @Column({
     type: DataType.STRING,
   })
-  whitepaper: string;
+  whitepaperUrl: string;
 
   @Column({
     type: DataType.STRING,
   })
-  litepaper: string;
+  litepaperUrl: string;
 
   @Column({
     type: DataType.STRING,
   })
-  tokenomics: string;
+  tokenomicsUrl: string;
 
   // Token Information
   @Column({
@@ -63,12 +69,6 @@ export class Project extends Model {
     type: DataType.DECIMAL,
   })
   amountToRaise: number;
-
-  @Column({
-    defaultValue: ProjectStates.DRAFT,
-    type: DataType.ENUM(...Object.values(ProjectStates)),
-  })
-  state: ProjectStates;
 
   // Social Networks
   @Column({
