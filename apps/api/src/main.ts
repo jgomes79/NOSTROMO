@@ -1,21 +1,55 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
+import { SwaggerModule } from '@nestjs/swagger';
+import cookieParser from 'cookie-parser';
+import csurf from 'csurf';
+import * as dotenv from 'dotenv';
+import { NextFunction, Request, Response } from 'express';
+import helmet from 'helmet';
+
+import { AppModule } from './app.module';
+import { swaggerOptions } from './doc';
+import domains, { csurfConfigOptions } from './lib/security/config';
+import { csrfMiddleware } from './lib/security/middlewares';
+
+// Environment
+dotenv.config({ path: '.env' });
+
+export const logger = new Logger('APIGateway');
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
-  Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
-  );
+
+  // CSRF Protection
+  const csrf = csurf(csurfConfigOptions);
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    csrfMiddleware(req, res, next, csrf);
+  });
+
+  // Swagger setup for development environment
+  if (process.env.ENV === 'dev') {
+    const document = SwaggerModule.createDocument(app, swaggerOptions);
+    SwaggerModule.setup('doc', app, document);
+  } else {
+    // Helmet for production environment
+    app.use(helmet());
+  }
+
+  // CORS configuration
+  app.enableCors({
+    origin:
+      process.env.ENV === 'prod'
+        ? domains.PRO
+        : [...domains.LOCAL, ...domains.STAGING],
+    credentials: true,
+  });
+
+  // Cookie parser setup
+  app.use(cookieParser(process.env.COOKIE_SECRET));
+
+  // Start listening on the specified port
+  await app.listen(process.env.PORT);
 }
 
+export default bootstrap;
 bootstrap();
