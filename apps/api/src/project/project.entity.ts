@@ -27,6 +27,48 @@ export class Project extends Model {
   description: string;
 
   @Column({
+    type: DataType.STRING,
+  })
+  avatar: string;
+
+  @Column({
+    type: DataType.STRING,
+  })
+  banner: string;
+
+  // Documents
+  @Column({
+    type: DataType.STRING,
+  })
+  whitepaper: string;
+
+  @Column({
+    type: DataType.STRING,
+  })
+  litepaper: string;
+
+  @Column({
+    type: DataType.STRING,
+  })
+  tokenomics: string;
+
+  // Token Information
+  @Column({
+    type: DataType.INTEGER,
+  })
+  tokensCreated: number;
+
+  @Column({
+    type: DataType.DECIMAL,
+  })
+  tokenPrice: number;
+
+  @Column({
+    type: DataType.DECIMAL,
+  })
+  amountToRaise: number;
+
+  @Column({
     defaultValue: ProjectStates.DRAFT,
     type: DataType.ENUM(...Object.values(ProjectStates)),
   })
@@ -36,12 +78,17 @@ export class Project extends Model {
   @Column({
     type: DataType.STRING,
   })
-  discordUrl: string;
+  instagramUrl: string;
 
   @Column({
     type: DataType.STRING,
   })
   xUrl: string;
+
+  @Column({
+    type: DataType.STRING,
+  })
+  discordUrl: string;
 
   @Column({
     type: DataType.STRING,

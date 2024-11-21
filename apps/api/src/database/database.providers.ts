@@ -1,4 +1,6 @@
 import { Project } from '@/project/project.entity';
+import { User } from '@/user/user.entity';
+import { Currency } from '@/currency/currency.entity';
 import { Sequelize } from 'sequelize-typescript';
 
 export const databaseProviders = [
@@ -20,7 +22,7 @@ export const databaseProviders = [
           },
         },
       });
-      sequelize.addModels([Project]);
+      sequelize.addModels([Project, User, Currency]);
       await sequelize.sync();
       return sequelize;
     },
