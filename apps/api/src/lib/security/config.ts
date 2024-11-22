@@ -8,7 +8,7 @@
  */
 export const csurfConfigOptions = {
   cookie: {
-    key: '_csrf',
+    key: "_csrf",
     sameSite: true,
     httpOnly: true,
     secure: true,
@@ -16,7 +16,7 @@ export const csurfConfigOptions = {
 };
 
 // Types
-type Domains = Record<'LOCAL' | 'STAGING' | 'PRO', string[]>;
+type Domains = Record<"LOCAL" | "STAGING" | "PRO", string[]>;
 
 /**
  * Domains configuration for different environments.
@@ -25,9 +25,9 @@ type Domains = Record<'LOCAL' | 'STAGING' | 'PRO', string[]>;
  * PRO: Domains for the production environment.
  */
 const domains: Domains = {
-  LOCAL: ['http://127.0.0.1:4200', 'http://localhost:4200'],
+  LOCAL: ["http://127.0.0.1:4200", "http://localhost:4200"],
   STAGING: [],
-  PRO: [''],
+  PRO: [""],
 };
 
 export default domains;
