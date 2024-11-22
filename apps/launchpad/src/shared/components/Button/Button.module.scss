@@ -13,6 +13,12 @@
     gap: 4px;
   }
 
+  &.large {
+    height: 74px;
+    padding: 0 42px;
+    gap: 8px;
+  }
+
   display: flex;
   flex-direction: row;
   flex-shrink: 0;

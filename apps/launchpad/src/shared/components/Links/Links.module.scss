@@ -1,0 +1,21 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+.link {
+  color: #C7D2BE;
+
+  &:hover {
+    color: #fff;
+  }
+
+  transition: color 120ms linear;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

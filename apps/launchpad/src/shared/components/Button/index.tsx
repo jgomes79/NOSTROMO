@@ -13,7 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   variant?: "solid" | "outline" | "ghost";
-  size?: "small" | "medium";
+  size?: "small" | "medium" | "large";
   color?: "primary" | "secondary";
 }
 

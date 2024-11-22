@@ -1,8 +1,8 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties } from "react";
 
-import classNames from 'clsx';
+import classNames from "clsx";
 
-import styles from './Typography.module.scss';
+import styles from "./Typography.module.scss";
 
 export interface TypographyProps {
   /**
@@ -11,7 +11,7 @@ export interface TypographyProps {
    * - 'body': For standard body text.
    * - 'label': For label text.
    */
-  variant?: 'heading' | 'body' | 'label';
+  variant?: "heading" | "body" | "label";
 
   /**
    * Specifies the size of the text.
@@ -21,7 +21,7 @@ export interface TypographyProps {
    * - 'small': Small text.
    * - 'xsmall': Extra small text.
    */
-  size?: 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall';
+  size?: "xlarge" | "large" | "medium" | "small" | "xsmall";
 
   /**
    * The content to be rendered inside the Typography component.
@@ -36,7 +36,7 @@ export interface TypographyProps {
   /**
    * Sets the text alignment. Defaults to 'left'.
    */
-  textAlign?: CSSProperties['textAlign'];
+  textAlign?: CSSProperties["textAlign"];
 
   /**
    * Additional CSS class names to apply to the component.
@@ -51,17 +51,14 @@ export interface TypographyProps {
  * @returns {React.ReactElement} The rendered React element.
  */
 export const Typography: React.FC<Readonly<TypographyProps>> = ({
-  variant = 'body',
-  size = 'medium',
-  textAlign = 'left',
+  variant = "body",
+  size = "medium",
+  textAlign = "left",
   children,
   className,
-  as: Component = 'span',
+  as: Component = "span",
 }: TypographyProps): React.ReactElement => (
-  <Component
-    className={classNames(className, styles[variant], styles[size])}
-    style={{ textAlign }}
-  >
+  <Component className={classNames(styles[variant], styles[size], className)} style={{ textAlign }}>
     {children}
   </Component>
 );
