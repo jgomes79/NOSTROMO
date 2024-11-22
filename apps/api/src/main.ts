@@ -27,7 +27,7 @@ async function bootstrap() {
   });
 
   // Swagger setup for development environment
-  if (process.env.ENV === 'dev') {
+  if (process.env.NODE_ENV === 'development') {
     const document = SwaggerModule.createDocument(app, swaggerOptions);
     SwaggerModule.setup('doc', app, document);
   } else {
@@ -38,7 +38,7 @@ async function bootstrap() {
   // CORS configuration
   app.enableCors({
     origin:
-      process.env.ENV === 'prod'
+      process.env.NODE_ENV === 'production'
         ? domains.PRO
         : [...domains.LOCAL, ...domains.STAGING],
     credentials: true,
