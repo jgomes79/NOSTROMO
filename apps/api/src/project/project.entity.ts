@@ -1,8 +1,8 @@
 import { Table, Column, Model, BelongsTo, ForeignKey, PrimaryKey, DataType } from "sequelize-typescript";
 
+import { Currency } from "@/currency/currency.entity";
 import { ProjectStates } from "@/project/project.types";
 import { User } from "@/user/user.entity";
-import { Currency } from "@/currency/currency.entity";
 
 @Table
 export class Project extends Model {

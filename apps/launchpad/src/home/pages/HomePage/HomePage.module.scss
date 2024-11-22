@@ -25,14 +25,14 @@
 
 .inner {
   max-width: 800px;
-  padding: 140px 42px 0;
+  padding: 0 40px;
 }
 
 .container {
   display: grid;
   place-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 82px);
 }
 
 .actions {
@@ -44,6 +44,7 @@
 }
 
 .title {
-  color: #47ea47;
-  text-shadow: 0 0 54px;
+  color: #64ee64;
+  font-weight: 100 !important;
+  text-shadow: 0 0 22px #328f32;
 }

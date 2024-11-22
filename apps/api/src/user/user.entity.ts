@@ -1,7 +1,7 @@
 import { Table, Column, Model, HasMany, PrimaryKey, DataType } from "sequelize-typescript";
 
-import { UserTiers, UserTypes } from "@/user/user.types";
 import { Project } from "@/project/project.entity";
+import { UserTiers, UserTypes } from "@/user/user.types";
 
 @Table
 export class User extends Model {

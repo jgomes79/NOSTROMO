@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
-import { UserController } from './user.controller';
-import { UserService } from './user.service';
-import { userProviders } from '@/user/user.providers';
-import { DatabaseModule } from '@/database/database.module';
+import { DatabaseModule } from "@/database/database.module";
+import { userProviders } from "@/user/user.providers";
+
+import { UserController } from "./user.controller";
+import { UserService } from "./user.service";
 
 /**
  * Module that provides user-related services and controllers.

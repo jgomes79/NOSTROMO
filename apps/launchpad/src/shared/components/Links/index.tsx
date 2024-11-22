@@ -23,7 +23,7 @@ interface LinksProps {
 export const Links: React.FC<LinksProps> = ({ data = [] }) => (
   <nav className={styles.layout}>
     {data.map((link, index) => (
-      <a href={link.path} target={"_blank"} className={styles.link} rel="noreferrer">
+      <a href={link.path} target={"_blank"} className={styles.link} rel="noreferrer" key={`--link-${index.toString()}`}>
         {link.icon}
       </a>
     ))}
