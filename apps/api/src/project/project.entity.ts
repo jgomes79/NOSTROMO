@@ -2,6 +2,7 @@ import { Table, Column, Model, BelongsTo, ForeignKey, PrimaryKey, DataType } fro
 
 import { ProjectStates } from "@/project/project.types";
 import { User } from "@/user/user.entity";
+import { Currency } from "@/currency/currency.entity";
 
 @Table
 export class Project extends Model {
@@ -105,4 +106,13 @@ export class Project extends Model {
 
   @BelongsTo(() => User)
   owner: User;
+
+  @ForeignKey(() => Currency)
+  @Column({
+    type: DataType.INTEGER,
+  })
+  currencyId: number;
+
+  @BelongsTo(() => Currency)
+  currency: Currency;
 }
