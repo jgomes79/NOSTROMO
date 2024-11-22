@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 0fr 1fr 0fr;
   gap: 22px;
-  padding: 28px 32px;
+  padding: 0 32px;
   align-items: center;
   justify-content: center;
   place-items: center;
@@ -12,6 +12,7 @@
   left: 0;
   right: 0;
   z-index: 20;
+  height: 80px;
 
   background: linear-gradient(90deg, rgba(255, 255, 255, 2%) 0%, rgb(199 210 190 / 4%) 50%, rgba(255, 255, 255, 2%) 100%);
   backdrop-filter: blur(20px);
@@ -50,7 +51,6 @@
     transition: color 120ms linear;
   }
 }
-
 
 .row {
   display: flex;

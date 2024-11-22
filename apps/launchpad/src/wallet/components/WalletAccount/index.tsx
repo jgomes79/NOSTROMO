@@ -17,7 +17,7 @@ export const WalletAccount: React.FC = () => {
             {connected && data ? (
               <Typography>{shortHex(data.account.address, 5)}</Typography>
             ) : (
-              <Button variant={"solid"} color={"primary"} caption={"Connect Wallet"} onClick={connect} />
+              <Button variant={"solid"} color={"primary"} size={"small"} caption={"Connect Wallet"} onClick={connect} />
             )}
           </>
         )}
