@@ -54,7 +54,7 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
               value={[photo]}
               onChange={(files) => setValue("photo", files[0])}
               onRender={(photos, getUrl) => (
-                <div>
+                <div className={styles.imagePreview}>
                   <img src={getUrl(photos[0])} />
                 </div>
               )}
@@ -68,7 +68,7 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
               value={[banner]}
               onChange={(files) => setValue("banner", files[0])}
               onRender={(photos, getUrl) => (
-                <div>
+                <div className={styles.imagePreview}>
                   <img src={getUrl(photos[0])} />
                 </div>
               )}
@@ -144,7 +144,7 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
               value={[whitepaper]}
               onChange={(files) => setValue("whitepaper", files[0])}
               onRender={(photos, getUrl) => (
-                <div>
+                <div className={styles.imagePreview}>
                   <img src={getUrl(photos[0])} />
                 </div>
               )}
@@ -158,7 +158,7 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
               value={[tokenomics]}
               onChange={(files) => setValue("tokenomics", files[0])}
               onRender={(photos, getUrl) => (
-                <div>
+                <div className={styles.imagePreview}>
                   <img src={getUrl(photos[0])} />
                 </div>
               )}
@@ -172,7 +172,7 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
               value={[litepaper]}
               onChange={(files) => setValue("litepaper", files[0])}
               onRender={(photos, getUrl) => (
-                <div>
+                <div className={styles.imagePreview}>
                   <img src={getUrl(photos[0])} />
                 </div>
               )}
