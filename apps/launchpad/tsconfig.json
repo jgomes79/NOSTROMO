@@ -9,6 +9,7 @@
     "noUnusedParameters": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client"],
 
@@ -27,6 +28,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "extends": "../../tsconfig.base.json"
+  ]
 }

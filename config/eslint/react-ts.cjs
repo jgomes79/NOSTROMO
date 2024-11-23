@@ -3,6 +3,11 @@ module.exports = {
     browser: true,
   },
   plugins: ["@typescript-eslint", "react-hooks", "react"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
   rules: {
     "react-hooks/rules-of-hooks": ["error"],
     "react-hooks/exhaustive-deps": "off",

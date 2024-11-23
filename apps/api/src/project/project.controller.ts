@@ -2,7 +2,6 @@ import { Get, Controller, Delete, Param, Query, Post, Body, Patch } from "@nestj
 import { ApiTags } from "@nestjs/swagger";
 
 import { CreateProjectDTO, EditProjectDTO } from "./project.dto";
-import { Project } from "./project.entity";
 import { ProjectService } from "./project.service";
 import { ProjectStates } from "./project.types";
 
@@ -58,12 +57,22 @@ export class ProjectController {
   }
 
   /**
+   * Creates a new project with the provided data.
+   * @param data - The data to create the project with, validated against CreateProjectDTO.
+   * @returns A promise that resolves to a partial project object.
+   */
+  @Post("/projects/create")
+  async createProject(@Body() data: CreateProjectDTO) {
+    console.log(data);
+  }
+
+  /**
    * Edits a project by its ID.
    * @param data The data to update the project with.
    * @returns A partial project object.
    */
   @Patch("/project/:projectId")
-  async editProject(@Body() data: EditProjectDTO): Promise<Partial<Project>> {
+  async editProject(@Body() data: EditProjectDTO) {
     console.log(data);
     return {};
   }
@@ -74,7 +83,7 @@ export class ProjectController {
    * @returns A partial project object.
    */
   @Delete("/project/:projectId")
-  async deleteProject(): Promise<Partial<Project>> {
+  async deleteProject() {
     return {};
   }
 
@@ -90,19 +99,8 @@ export class ProjectController {
     @Param("state") state: ProjectStates | "all",
     @Query("page") page: number,
     @Query("limit") limit: number,
-  ): Promise<Partial<Project>[]> {
+  ) {
     console.log({ state, page, limit });
     return [];
-  }
-
-  /**
-   * Deletes a project by its ID.
-   * @returns A partial project object.
-   * @param data
-   */
-  @Post("/projects/create")
-  async createProject(@Body() data: CreateProjectDTO): Promise<Partial<Project>> {
-    console.log(data);
-    return {};
   }
 }

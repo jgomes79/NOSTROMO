@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 42px;
+  padding: 22px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #fff;
+  border-color: #111;
+  border-style: solid;
+  cursor: default;
+
+  legend {
+    color: greenyellow;
+    margin-left: 22px;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    gap: 32px;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+
+  &.two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -25,10 +25,30 @@ export const ProjectSchema = z.object({
   currency: CurrencySchema,
 
   social: z.object({
-    instagramUrl: z.string().url({ message: "Invalid Instagram URL format" }).optional(),
-    xUrl: z.string().url({ message: "Invalid X URL format" }).optional(),
-    discordUrl: z.string().url({ message: "Invalid Discord URL format" }).optional(),
-    telegramUrl: z.string().url({ message: "Invalid Telegram URL format" }).optional(),
-    mediumUrl: z.string().url({ message: "Invalid Medium URL format" }).optional(),
+    instagramUrl: z
+      .string()
+      .url({ message: "Invalid Instagram URL format" })
+      .regex(/^https:\/\/(www\.)?instagram\.com\/.*/, { message: "URL must be from Instagram" })
+      .optional(),
+    xUrl: z
+      .string()
+      .url({ message: "Invalid X URL format" })
+      .regex(/^https:\/\/(www\.)?x\.com\/.*/, { message: "URL must be from X" })
+      .optional(),
+    discordUrl: z
+      .string()
+      .url({ message: "Invalid Discord URL format" })
+      .regex(/^https:\/\/(www\.)?discord\.com\/.*/, { message: "URL must be from Discord" })
+      .optional(),
+    telegramUrl: z
+      .string()
+      .url({ message: "Invalid Telegram URL format" })
+      .regex(/^https:\/\/(www\.)?t\.me\/.*/, { message: "URL must be from Telegram" })
+      .optional(),
+    mediumUrl: z
+      .string()
+      .url({ message: "Invalid Medium URL format" })
+      .regex(/^https:\/\/(www\.)?medium\.com\/.*/, { message: "URL must be from Medium" })
+      .optional(),
   }),
 });

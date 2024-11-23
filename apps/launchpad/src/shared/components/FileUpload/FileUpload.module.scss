@@ -1,0 +1,44 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  padding: 38px 22px;
+  border: 1px solid #333;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  cursor: pointer;
+
+  &:not(.isDragActive):hover {
+    border-color: greenyellow;
+    background: #171e06;
+  }
+
+  &.isDragActive {
+    border: 1px solid greenyellow;
+  }
+
+  &.hasValue {
+    padding: 0;
+    gap: 0;
+    border: none;
+  }
+
+  transition: 120ms linear;
+}
+
+.icon {
+  color: greenyellow;
+
+  svg {
+    width: 62px;
+    height: 62px;
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 500px;
+}

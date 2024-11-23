@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { useProject } from "@/project/hooks/useProject";
 import { Button } from "@/shared/components/Button";
 import { Loader } from "@/shared/components/Loader";
 import { Typography } from "@/shared/components/Typography";
 import { ErrorPage } from "@/shared/pages/ErrorPage";
 
 import styles from "./ProjectDetails.module.scss";
+import { useProject } from "../../hooks/useProject";
 
 type ProjectDetailsParams = {
   slug: string;

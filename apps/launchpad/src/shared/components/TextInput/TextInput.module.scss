@@ -1,0 +1,21 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  padding: 18px;
+  background: #222;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid #333;
+  color: #fff;
+  font-size: 14px;
+
+  &:focus {
+    outline: 1px solid yellowgreen;
+  }
+
+  transition: 120ms linear;
+}

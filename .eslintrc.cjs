@@ -1,24 +1,24 @@
-const imports = require('./config/eslint/imports.cjs');
-const react = require('./config/eslint/react-ts.cjs');
-const typescript = require('./config/eslint/typescript.cjs');
+const imports = require("./config/eslint/imports.cjs");
+const react = require("./config/eslint/react-ts.cjs");
+const typescript = require("./config/eslint/typescript.cjs");
 
 module.exports = {
   root: true,
-  ignorePatterns: ['**/*'],
-  plugins: ['@nx'],
+  ignorePatterns: ["**/*"],
+  plugins: ["@nx"],
   overrides: [
     {
-      files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
+      files: ["*.ts", "*.tsx", "*.js", "*.jsx"],
       rules: {
-        '@nx/enforce-module-boundaries': [
-          'error',
+        "@nx/enforce-module-boundaries": [
+          "error",
           {
             enforceBuildableLibDependency: true,
             allow: [],
             depConstraints: [
               {
-                sourceTag: '*',
-                onlyDependOnLibsWithTags: ['*'],
+                sourceTag: "*",
+                onlyDependOnLibsWithTags: ["*"],
               },
             ],
           },
@@ -26,13 +26,13 @@ module.exports = {
       },
     },
     {
-      files: ['*.ts', '*.tsx'],
+      files: ["*.ts", "*.tsx"],
       extends: [
-        'plugin:@nx/typescript',
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:react-hooks/recommended',
-        'plugin:@tanstack/eslint-plugin-query/recommended',
+        "plugin:@nx/typescript",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended",
       ],
       env: {
         ...imports.env,
@@ -43,11 +43,11 @@ module.exports = {
         ...imports.plugins,
         ...typescript.plugins,
         ...react.plugins,
-        'react-refresh',
+        "react-refresh",
       ],
       rules: {
-        'react-refresh/only-export-components': [
-          'warn',
+        "react-refresh/only-export-components": [
+          "warn",
           { allowConstantExport: true },
         ],
         ...imports.rules,
@@ -60,12 +60,12 @@ module.exports = {
       overrides: [...typescript.overrides],
     },
     {
-      files: ['*.js', '*.jsx'],
-      extends: ['plugin:@nx/javascript'],
+      files: ["*.js", "*.jsx"],
+      extends: ["plugin:@nx/javascript"],
       rules: {},
     },
     {
-      files: ['*.spec.ts', '*.spec.tsx', '*.spec.js', '*.spec.jsx'],
+      files: ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
       env: {
         jest: true,
       },
