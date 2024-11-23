@@ -15,13 +15,46 @@ export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
   /**
-   * Fetches a project by its ID.
-   * @param projectId The ID of the project to fetch.
-   * @returns A partial project object.
+   * Fetches a project by its slug.
+   * @param slug - The slug of the project to fetch.
+   * @returns A promise that resolves to a project object.
    */
-  @Get("/project/:projectId")
-  async getProject(): Promise<Partial<Project>> {
-    return {};
+  @Get("/project/:slug")
+  async getProject(@Param("slug") slug: string) {
+    const project = await this.projectService.getBySlug(slug);
+
+    return {
+      id: project.id,
+      state: project.state,
+      name: project.name,
+      slug: project.slug,
+      description: project.description,
+      photoUrl: project.photoUrl,
+      bannerUrl: project.bannerUrl,
+      whitepaperUrl: project.whitepaperUrl,
+      litepaperUrl: project.litepaperUrl,
+      tokenomics: project.tokenomicsUrl,
+      tokensCreated: project.tokensCreated,
+      tokenPrice: project.tokenPrice,
+      amountToRaise: project.amountToRaise,
+      createdAt: project.createdAt,
+      owner: {
+        wallet: project.owner.wallet,
+        tier: project.owner.tier,
+      },
+      social: {
+        instagramUrl: project.instagramUrl,
+        xUrl: project.xUrl,
+        discordUrl: project.discordUrl,
+        telegramUrl: project.telegramUrl,
+        mediumUrl: project.mediumUrl,
+      },
+      currency: {
+        id: project.currency.id,
+        name: project.currency.name,
+        symbol: project.currency.symbol,
+      },
+    };
   }
 
   /**

@@ -1,4 +1,6 @@
-import { Table, Column, Model, PrimaryKey, DataType } from "sequelize-typescript";
+import { Table, Column, Model, PrimaryKey, DataType, HasMany } from "sequelize-typescript";
+
+import { Project } from "@/project/project.entity";
 
 @Table
 export class Currency extends Model {
@@ -18,4 +20,8 @@ export class Currency extends Model {
     type: DataType.STRING,
   })
   symbol: string;
+
+  // Relationships
+  @HasMany(() => Project)
+  projects: Project[];
 }

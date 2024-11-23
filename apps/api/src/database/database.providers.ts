@@ -22,10 +22,12 @@ export const databaseProviders = [
             rejectUnauthorized: false,
           },
         },
-        logging: false,
+        logging: true,
       });
       sequelize.addModels([Project, User, Currency]);
-      await sequelize.sync();
+      await sequelize.sync({
+        alter: true,
+      });
       return sequelize;
     },
   },

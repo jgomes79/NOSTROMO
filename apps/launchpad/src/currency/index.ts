@@ -1,7 +1,7 @@
 import { registerModule } from "@/core/modules/modules.helpers";
 
-import { MODULE_USER } from "./user.constants";
+import { MODULE_CURRENCY } from "./currency.constants";
 
 registerModule({
-  name: MODULE_USER,
+  name: MODULE_CURRENCY,
 });

@@ -13,7 +13,7 @@ import { ServiceNames } from "./api.types";
 export const getEndpoint = (service: ServiceNames, path: string): string =>
   import.meta.env.VITE_APP_ENDPOINT
     ? `${import.meta.env.VITE_APP_ENDPOINT}/${service}${path}`
-    : `https://api.mindney.com/${service}${path}`;
+    : `https://api.nostromo.com/${service}${path}`;
 
 /**
  * Sends a generic HTTP request with the Bearer token from localStorage injected into the header.

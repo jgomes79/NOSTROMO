@@ -27,6 +27,11 @@ export class Project extends Model {
   @Column({
     type: DataType.STRING,
   })
+  slug: string;
+
+  @Column({
+    type: DataType.TEXT,
+  })
   description: string;
 
   @Column({
