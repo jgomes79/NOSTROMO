@@ -14,7 +14,13 @@ import styles from "./ProjectForm.module.scss";
 import { ProjectFormValues, ProjectFormSchema, ProjectFormProps } from "./ProjectForm.types";
 
 export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmit }) => {
-  const { register, setValue, handleSubmit, watch } = useForm<ProjectFormValues>({
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm<ProjectFormValues>({
     defaultValues,
     resolver: zodResolver(ProjectFormSchema),
     reValidateMode: "onBlur",
@@ -27,14 +33,14 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
     litepaper = watch("litepaper"),
     tokenomics = watch("tokenomics");
 
+  console.log(errors);
+
   /**
    * Handles the form submission.
    *
-   * @param {ProjectFormValues} data - The data from the form.
+   * @param data - The data from the form.
    */
-  const onSubmitHandler: SubmitHandler<ProjectFormValues> = (data) => {
-    onSubmit(data);
-  };
+  const onSubmitHandler: SubmitHandler<ProjectFormValues> = (data: ProjectFormValues) => onSubmit(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmitHandler)} className={styles.form}>
@@ -184,9 +190,11 @@ export const ProjectForm: React.FC<ProjectFormProps> = ({ defaultValues, onSubmi
       <div className={styles.actions}>
         <div className={classNames(styles.grid, styles.two)}>
           <Button variant={"ghost"} caption={"Cancel"} />
-          <Button caption={"Submit for Review"} />
+          <Button caption={"Submit for Review"} type={"submit"} />
         </div>
       </div>
     </form>
   );
 };
+
+export type { ProjectFormValues, ProjectFormSchema };

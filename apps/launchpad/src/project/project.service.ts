@@ -1,4 +1,4 @@
-import { getEndpoint, request } from "@/core/api/api.helpers";
+import { getEndpoint, request, requestWithFile } from "@/core/api/api.helpers";
 import { Project } from "@/project/project.types";
 
 /**
@@ -11,3 +11,12 @@ export const getProjectById = (slug: Project["slug"]): Promise<Project> =>
   request<Project>(getEndpoint("projects-service", `/project/${slug}`), {
     method: "GET",
   });
+
+/**
+ * Creates a new project.
+ *
+ * @param {FormData} data - The form data containing project details.
+ * @returns {Promise<Project>} - A promise that resolves to the newly created project data.
+ */
+export const createProject = (data: FormData): Promise<Project> =>
+  requestWithFile<Project>(getEndpoint("projects-service", "/projects/create"), data);

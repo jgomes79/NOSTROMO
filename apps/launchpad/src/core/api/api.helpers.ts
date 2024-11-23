@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from "axios";
-import Cookies from "js-cookie";
 
 import { ServiceNames } from "./api.types";
 
@@ -25,8 +24,6 @@ export const getEndpoint = (service: ServiceNames, path: string): string =>
  * @throws {Error} - Throws an error if an authenticated token is required but not found.
  */
 export async function request<T>(url: string, config: AxiosRequestConfig = {}): Promise<T> {
-  const token = Cookies.get("Authorization");
-
   if (config.params) {
     Object.keys(config.params).forEach((key) => {
       if (config.params[key] === null) {
@@ -38,10 +35,30 @@ export async function request<T>(url: string, config: AxiosRequestConfig = {}): 
   return axios({
     url,
     ...config,
+    withCredentials: true,
+  }).then((response) => response.data);
+}
+
+/**
+ * Sends an HTTP request with data as FormData, including files and other fields.
+ *
+ * @template T - The type of the response data.
+ * @param {string} url - The endpoint URL.
+ * @param {FormData} formData - The form data to be sent, including files.
+ * @param {AxiosRequestConfig} [config={}] - The Axios request configuration.
+ * @returns {Promise<T>} - A promise that resolves to the response data.
+ * @throws {Error} - Throws an error if an authenticated token is required but not found.
+ */
+export async function requestWithFile<T>(url: string, formData: FormData, config: AxiosRequestConfig = {}): Promise<T> {
+  return axios({
+    url,
+    method: "POST",
+    data: formData,
     headers: {
       ...config.headers,
-      Authorization: `${token}`,
+      "Content-Type": "multipart/form-data",
     },
     withCredentials: true,
+    ...config,
   }).then((response) => response.data);
 }

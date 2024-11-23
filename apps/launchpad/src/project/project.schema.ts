@@ -18,9 +18,9 @@ export const ProjectSchema = z.object({
   whitepaperUrl: z.string().url({ message: "Invalid URL format" }),
   litepaperUrl: z.string().url({ message: "Invalid URL format" }),
   tokenomicsUrl: z.string().url({ message: "Invalid URL format" }),
-  tokensCreated: z.number().nonnegative("Tokens Created must be a non-negative number"),
-  tokenPrice: z.number().nonnegative("Token Price must be a non-negative number"),
-  amountToRaise: z.number().nonnegative("Amount to Raise must be a non-negative number"),
+  tokensCreated: z.string(),
+  tokenPrice: z.string(),
+  amountToRaise: z.string(),
 
   currency: CurrencySchema,
 
@@ -28,27 +28,22 @@ export const ProjectSchema = z.object({
     instagramUrl: z
       .string()
       .url({ message: "Invalid Instagram URL format" })
-      .regex(/^https:\/\/(www\.)?instagram\.com\/.*/, { message: "URL must be from Instagram" })
-      .optional(),
+      .regex(/^https:\/\/(www\.)?instagram\.com\/.*/, { message: "URL must be from Instagram" }),
     xUrl: z
       .string()
       .url({ message: "Invalid X URL format" })
-      .regex(/^https:\/\/(www\.)?x\.com\/.*/, { message: "URL must be from X" })
-      .optional(),
+      .regex(/^https:\/\/(www\.)?x\.com\/.*/, { message: "URL must be from X" }),
     discordUrl: z
       .string()
       .url({ message: "Invalid Discord URL format" })
-      .regex(/^https:\/\/(www\.)?discord\.com\/.*/, { message: "URL must be from Discord" })
-      .optional(),
+      .regex(/^https:\/\/(www\.)?discord\.com\/.*/, { message: "URL must be from Discord" }),
     telegramUrl: z
       .string()
       .url({ message: "Invalid Telegram URL format" })
-      .regex(/^https:\/\/(www\.)?t\.me\/.*/, { message: "URL must be from Telegram" })
-      .optional(),
+      .regex(/^https:\/\/(www\.)?t\.me\/.*/, { message: "URL must be from Telegram" }),
     mediumUrl: z
       .string()
       .url({ message: "Invalid Medium URL format" })
-      .regex(/^https:\/\/(www\.)?medium\.com\/.*/, { message: "URL must be from Medium" })
-      .optional(),
+      .regex(/^https:\/\/(www\.)?medium\.com\/.*/, { message: "URL must be from Medium" }),
   }),
 });
